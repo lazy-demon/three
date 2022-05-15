@@ -1,7 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 
-import 'main.dart';
+import '../main.dart';
 
 class HomePage extends StatelessWidget {
   final VoidCallback? navigate, showUserPosts;

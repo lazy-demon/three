@@ -1,8 +1,8 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:three/auth.dart';
+import 'package:three/guard/auth.dart';
 
-import 'router.dart';
+import 'router/router.dart';
 
 void main() {
   runApp(const App());
