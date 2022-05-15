@@ -1,67 +1,86 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:three/auth.dart';
+
+import 'router.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const App());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+class App extends StatefulWidget {
+  const App({Key? key}) : super(key: key);
 
-  // This widget is the root of your application.
+  @override
+  AppState createState() => AppState();
+
+  static AppState of(BuildContext context) {
+    return context.findAncestorStateOfType<AppState>()!;
+  }
+}
+
+class AppState extends State<App> {
+  late final authService = AuthService()
+    ..addListener(() {
+      setState(() {});
+    });
+
+  late final _appRouter = AppRouter(authGuard: AuthGuard(authService));
+
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+    return MaterialApp.router(
+      theme: ThemeData.dark(),
+      debugShowCheckedModeBanner: false,
+      routeInformationProvider: _appRouter.routeInfoProvider(),
+      routeInformationParser: _appRouter.defaultRouteParser(),
+      routerDelegate: _appRouter.delegate(
+          // initialDeepLink: '/user/1/posts/favorite',
+          // onNavigate: (urlState){
+          //   print(urlState.path);
+          //   setState(() {
+          //     urlRoutes = urlState.segments.map((e) => e.toPageRouteInfo()).toList();
+          //   });
+          // },
+          // routes: (handler) {
+          //   print(handler.peek?.map((e) => e.routeName));
+          //   if (!authService.isAuthenticated) return [LoginRoute()];
+          //   return handler.initialPendingRoutes ?? [HomeRouter()];
+          // },
+          ),
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({Key? key, required this.title}) : super(key: key);
+// mock auth state
+class AuthService extends ChangeNotifier {
+  bool _isAuthenticated = false;
 
-  final String title;
+  bool get isAuthenticated => _isAuthenticated;
 
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
+  bool _isVerified = false;
 
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
+  bool get isVerified => _isVerified;
 
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
+  set isVerified(bool value) {
+    _isVerified = value;
+    notifyListeners();
   }
 
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-        appBar: AppBar(
-          title: Text(widget.title),
-        ),
-        body: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              const Text(
-                'You have pushed the button this many times:',
-              ),
-              Text(
-                '$_counter',
-                style: Theme.of(context).textTheme.headline4,
-              ),
-            ],
-          ),
-        ),
-        floatingActionButton: FloatingActionButton(
-          onPressed: _incrementCounter,
-          tooltip: 'Increment',
-          child: const Icon(Icons.add),
-        ));
+  set isAuthenticated(bool value) {
+    _isAuthenticated = value;
+    notifyListeners();
+  }
+
+  void loginAndVerify() {
+    _isAuthenticated = true;
+    _isVerified = true;
+    notifyListeners();
+  }
+
+  void logout() {
+    _isAuthenticated = false;
+    _isVerified = false;
+    notifyListeners();
   }
 }
