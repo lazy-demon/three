@@ -1,33 +1,20 @@
-import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class AuthService extends ChangeNotifier {
-  bool _isAuthenticated = false;
+class AuthService extends StateNotifier<bool> {
+  AuthService() : super(false);
 
-  bool get isAuthenticated => _isAuthenticated;
-
-  bool _isVerified = false;
-
-  bool get isVerified => _isVerified;
-
-  set isVerified(bool value) {
-    _isVerified = value;
-    notifyListeners();
-  }
-
-  set isAuthenticated(bool value) {
-    _isAuthenticated = value;
-    notifyListeners();
+  bool status() {
+    print("status");
+    return state;
   }
 
   void loginAndVerify() {
-    _isAuthenticated = true;
-    _isVerified = true;
-    notifyListeners();
+    print("loginAndVerify");
+    state = true;
   }
 
   void logout() {
-    _isAuthenticated = false;
-    _isVerified = false;
-    notifyListeners();
+    print("logout");
+    state = false;
   }
 }

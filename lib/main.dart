@@ -1,7 +1,9 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:three/guard/auth.dart';
 
+import 'notifier/auth.dart';
 import 'router/router.dart';
 
 void main() {
@@ -21,7 +23,7 @@ class App extends StatefulWidget {
 
 class AppState extends State<App> {
   late final authService = AuthService()
-    ..addListener(() {
+    ..addListener((state) {
       setState(() {});
     });
 
@@ -49,38 +51,5 @@ class AppState extends State<App> {
           // },
           ),
     );
-  }
-}
-
-// mock auth state
-class AuthService extends ChangeNotifier {
-  bool _isAuthenticated = false;
-
-  bool get isAuthenticated => _isAuthenticated;
-
-  bool _isVerified = false;
-
-  bool get isVerified => _isVerified;
-
-  set isVerified(bool value) {
-    _isVerified = value;
-    notifyListeners();
-  }
-
-  set isAuthenticated(bool value) {
-    _isAuthenticated = value;
-    notifyListeners();
-  }
-
-  void loginAndVerify() {
-    _isAuthenticated = true;
-    _isVerified = true;
-    notifyListeners();
-  }
-
-  void logout() {
-    _isAuthenticated = false;
-    _isVerified = false;
-    notifyListeners();
   }
 }
