@@ -22,14 +22,8 @@ class _$AppRouter extends RootStackRouter {
   @override
   final Map<String, PageFactory> pagesMap = {
     HomeRoute.name: (routeData) {
-      final args =
-          routeData.argsAs<HomeRouteArgs>(orElse: () => const HomeRouteArgs());
       return MaterialPageX<dynamic>(
-          routeData: routeData,
-          child: HomePage(
-              key: args.key,
-              navigate: args.navigate,
-              showUserPosts: args.showUserPosts));
+          routeData: routeData, child: const HomePage());
     },
     LoginRoute.name: (routeData) {
       return MaterialPageX<dynamic>(
@@ -46,30 +40,10 @@ class _$AppRouter extends RootStackRouter {
 
 /// generated route for
 /// [HomePage]
-class HomeRoute extends PageRouteInfo<HomeRouteArgs> {
-  HomeRoute(
-      {Key? key, void Function()? navigate, void Function()? showUserPosts})
-      : super(HomeRoute.name,
-            path: '/',
-            args: HomeRouteArgs(
-                key: key, navigate: navigate, showUserPosts: showUserPosts));
+class HomeRoute extends PageRouteInfo<void> {
+  const HomeRoute() : super(HomeRoute.name, path: '/');
 
   static const String name = 'HomeRoute';
-}
-
-class HomeRouteArgs {
-  const HomeRouteArgs({this.key, this.navigate, this.showUserPosts});
-
-  final Key? key;
-
-  final void Function()? navigate;
-
-  final void Function()? showUserPosts;
-
-  @override
-  String toString() {
-    return 'HomeRouteArgs{key: $key, navigate: $navigate, showUserPosts: $showUserPosts}';
-  }
 }
 
 /// generated route for

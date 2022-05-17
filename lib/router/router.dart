@@ -1,9 +1,9 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 
+import '../body/home.dart';
+import '../body/login.dart';
 import '../guard/auth.dart';
-import '../scaffold/home.dart';
-import '../scaffold/login.dart';
 
 part 'router.gr.dart';
 

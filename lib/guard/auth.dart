@@ -2,19 +2,18 @@ import 'package:auto_route/auto_route.dart';
 
 import '../notifier/auth.dart';
 import '../router/router.dart';
+import '../state/auth.dart';
 
 class AuthGuard extends AutoRedirectGuard {
-  final AuthService authService;
+  final AuthNotifier auth;
 
-  AuthGuard(this.authService) {
-    // authService.addListener(reevaluate);
-    notifyListeners();
+  AuthGuard(this.auth) {
+    auth.addListener((_) => reevaluate());
   }
 
   @override
   Future<bool> canNavigate(RouteMatch route) async {
-    print("canNavigate");
-    return authService.status();
+    return auth.status() is Authenticated;
   }
 
   @override
