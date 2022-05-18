@@ -19,9 +19,11 @@ class AuthGuard extends AutoRedirectGuard {
   @override
   Future<void> onNavigation(
       NavigationResolver resolver, StackRouter router) async {
+    print(resolver);
+    print(router);
     if (await canNavigate(resolver.route)) {
       resolver.next();
-    } else {
+    } else if (auth.status() is Unauthenticated) {
       redirect(const LoginRoute(), resolver: resolver);
     }
   }

@@ -9,7 +9,6 @@ class NavigationDrawer extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    var email = ref.watch(userProvider).value!.email;
     var name = ref.watch(userProvider).value!.displayName ?? "Welcome";
 
     var list = [
@@ -30,9 +29,9 @@ class NavigationDrawer extends ConsumerWidget {
           UserAccountsDrawerHeader(
             currentAccountPicture: CircleAvatar(
               backgroundImage:
-                  NetworkImage('https://i.pravatar.cc/300?u=$name'),
+                  NetworkImage('https://i.pravatar.cc/300?u=name$name'),
             ),
-            accountEmail: Text(email!),
+            accountEmail: const Text("email!"),
             accountName: Text(
               name,
               style: const TextStyle(fontSize: 20.0),

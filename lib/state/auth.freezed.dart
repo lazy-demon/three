@@ -1,5 +1,6 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'auth.dart';
@@ -11,44 +12,11 @@ part of 'auth.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$AuthStateTearOff {
-  const _$AuthStateTearOff();
-
-  UnAuthenticated unauthenticated(String data) {
-    return UnAuthenticated(
-      data,
-    );
-  }
-
-  Authenticated authenticated(String data) {
-    return Authenticated(
-      data,
-    );
-  }
-
-  Loading loading(String data) {
-    return Loading(
-      data,
-    );
-  }
-
-  Error error(String data) {
-    return Error(
-      data,
-    );
-  }
-}
-
-/// @nodoc
-const $AuthState = _$AuthStateTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$AuthState {
   String get data => throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String data) unauthenticated,
@@ -76,7 +44,7 @@ mixin _$AuthState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(UnAuthenticated value) unauthenticated,
+    required TResult Function(Unauthenticated value) unauthenticated,
     required TResult Function(Authenticated value) authenticated,
     required TResult Function(Loading value) loading,
     required TResult Function(Error value) error,
@@ -84,7 +52,7 @@ mixin _$AuthState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(UnAuthenticated value)? unauthenticated,
+    TResult Function(Unauthenticated value)? unauthenticated,
     TResult Function(Authenticated value)? authenticated,
     TResult Function(Loading value)? loading,
     TResult Function(Error value)? error,
@@ -92,7 +60,7 @@ mixin _$AuthState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(UnAuthenticated value)? unauthenticated,
+    TResult Function(Unauthenticated value)? unauthenticated,
     TResult Function(Authenticated value)? authenticated,
     TResult Function(Loading value)? loading,
     TResult Function(Error value)? error,
@@ -134,30 +102,31 @@ class _$AuthStateCopyWithImpl<$Res> implements $AuthStateCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class $UnAuthenticatedCopyWith<$Res>
+abstract class _$$UnauthenticatedCopyWith<$Res>
     implements $AuthStateCopyWith<$Res> {
-  factory $UnAuthenticatedCopyWith(
-          UnAuthenticated value, $Res Function(UnAuthenticated) then) =
-      _$UnAuthenticatedCopyWithImpl<$Res>;
+  factory _$$UnauthenticatedCopyWith(
+          _$Unauthenticated value, $Res Function(_$Unauthenticated) then) =
+      __$$UnauthenticatedCopyWithImpl<$Res>;
   @override
   $Res call({String data});
 }
 
 /// @nodoc
-class _$UnAuthenticatedCopyWithImpl<$Res> extends _$AuthStateCopyWithImpl<$Res>
-    implements $UnAuthenticatedCopyWith<$Res> {
-  _$UnAuthenticatedCopyWithImpl(
-      UnAuthenticated _value, $Res Function(UnAuthenticated) _then)
-      : super(_value, (v) => _then(v as UnAuthenticated));
+class __$$UnauthenticatedCopyWithImpl<$Res>
+    extends _$AuthStateCopyWithImpl<$Res>
+    implements _$$UnauthenticatedCopyWith<$Res> {
+  __$$UnauthenticatedCopyWithImpl(
+      _$Unauthenticated _value, $Res Function(_$Unauthenticated) _then)
+      : super(_value, (v) => _then(v as _$Unauthenticated));
 
   @override
-  UnAuthenticated get _value => super._value as UnAuthenticated;
+  _$Unauthenticated get _value => super._value as _$Unauthenticated;
 
   @override
   $Res call({
     Object? data = freezed,
   }) {
-    return _then(UnAuthenticated(
+    return _then(_$Unauthenticated(
       data == freezed
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
@@ -168,8 +137,8 @@ class _$UnAuthenticatedCopyWithImpl<$Res> extends _$AuthStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$UnAuthenticated implements UnAuthenticated {
-  _$UnAuthenticated(this.data);
+class _$Unauthenticated implements Unauthenticated {
+  _$Unauthenticated(this.data);
 
   @override
   final String data;
@@ -183,7 +152,7 @@ class _$UnAuthenticated implements UnAuthenticated {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is UnAuthenticated &&
+            other is _$Unauthenticated &&
             const DeepCollectionEquality().equals(other.data, data));
   }
 
@@ -193,8 +162,8 @@ class _$UnAuthenticated implements UnAuthenticated {
 
   @JsonKey(ignore: true)
   @override
-  $UnAuthenticatedCopyWith<UnAuthenticated> get copyWith =>
-      _$UnAuthenticatedCopyWithImpl<UnAuthenticated>(this, _$identity);
+  _$$UnauthenticatedCopyWith<_$Unauthenticated> get copyWith =>
+      __$$UnauthenticatedCopyWithImpl<_$Unauthenticated>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -236,7 +205,7 @@ class _$UnAuthenticated implements UnAuthenticated {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(UnAuthenticated value) unauthenticated,
+    required TResult Function(Unauthenticated value) unauthenticated,
     required TResult Function(Authenticated value) authenticated,
     required TResult Function(Loading value) loading,
     required TResult Function(Error value) error,
@@ -247,7 +216,7 @@ class _$UnAuthenticated implements UnAuthenticated {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(UnAuthenticated value)? unauthenticated,
+    TResult Function(Unauthenticated value)? unauthenticated,
     TResult Function(Authenticated value)? authenticated,
     TResult Function(Loading value)? loading,
     TResult Function(Error value)? error,
@@ -258,7 +227,7 @@ class _$UnAuthenticated implements UnAuthenticated {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(UnAuthenticated value)? unauthenticated,
+    TResult Function(Unauthenticated value)? unauthenticated,
     TResult Function(Authenticated value)? authenticated,
     TResult Function(Loading value)? loading,
     TResult Function(Error value)? error,
@@ -271,42 +240,42 @@ class _$UnAuthenticated implements UnAuthenticated {
   }
 }
 
-abstract class UnAuthenticated implements AuthState {
-  factory UnAuthenticated(String data) = _$UnAuthenticated;
+abstract class Unauthenticated implements AuthState {
+  factory Unauthenticated(final String data) = _$Unauthenticated;
 
   @override
-  String get data;
+  String get data => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  $UnAuthenticatedCopyWith<UnAuthenticated> get copyWith =>
+  _$$UnauthenticatedCopyWith<_$Unauthenticated> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $AuthenticatedCopyWith<$Res>
+abstract class _$$AuthenticatedCopyWith<$Res>
     implements $AuthStateCopyWith<$Res> {
-  factory $AuthenticatedCopyWith(
-          Authenticated value, $Res Function(Authenticated) then) =
-      _$AuthenticatedCopyWithImpl<$Res>;
+  factory _$$AuthenticatedCopyWith(
+          _$Authenticated value, $Res Function(_$Authenticated) then) =
+      __$$AuthenticatedCopyWithImpl<$Res>;
   @override
   $Res call({String data});
 }
 
 /// @nodoc
-class _$AuthenticatedCopyWithImpl<$Res> extends _$AuthStateCopyWithImpl<$Res>
-    implements $AuthenticatedCopyWith<$Res> {
-  _$AuthenticatedCopyWithImpl(
-      Authenticated _value, $Res Function(Authenticated) _then)
-      : super(_value, (v) => _then(v as Authenticated));
+class __$$AuthenticatedCopyWithImpl<$Res> extends _$AuthStateCopyWithImpl<$Res>
+    implements _$$AuthenticatedCopyWith<$Res> {
+  __$$AuthenticatedCopyWithImpl(
+      _$Authenticated _value, $Res Function(_$Authenticated) _then)
+      : super(_value, (v) => _then(v as _$Authenticated));
 
   @override
-  Authenticated get _value => super._value as Authenticated;
+  _$Authenticated get _value => super._value as _$Authenticated;
 
   @override
   $Res call({
     Object? data = freezed,
   }) {
-    return _then(Authenticated(
+    return _then(_$Authenticated(
       data == freezed
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
@@ -332,7 +301,7 @@ class _$Authenticated implements Authenticated {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is Authenticated &&
+            other is _$Authenticated &&
             const DeepCollectionEquality().equals(other.data, data));
   }
 
@@ -342,8 +311,8 @@ class _$Authenticated implements Authenticated {
 
   @JsonKey(ignore: true)
   @override
-  $AuthenticatedCopyWith<Authenticated> get copyWith =>
-      _$AuthenticatedCopyWithImpl<Authenticated>(this, _$identity);
+  _$$AuthenticatedCopyWith<_$Authenticated> get copyWith =>
+      __$$AuthenticatedCopyWithImpl<_$Authenticated>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -385,7 +354,7 @@ class _$Authenticated implements Authenticated {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(UnAuthenticated value) unauthenticated,
+    required TResult Function(Unauthenticated value) unauthenticated,
     required TResult Function(Authenticated value) authenticated,
     required TResult Function(Loading value) loading,
     required TResult Function(Error value) error,
@@ -396,7 +365,7 @@ class _$Authenticated implements Authenticated {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(UnAuthenticated value)? unauthenticated,
+    TResult Function(Unauthenticated value)? unauthenticated,
     TResult Function(Authenticated value)? authenticated,
     TResult Function(Loading value)? loading,
     TResult Function(Error value)? error,
@@ -407,7 +376,7 @@ class _$Authenticated implements Authenticated {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(UnAuthenticated value)? unauthenticated,
+    TResult Function(Unauthenticated value)? unauthenticated,
     TResult Function(Authenticated value)? authenticated,
     TResult Function(Loading value)? loading,
     TResult Function(Error value)? error,
@@ -421,38 +390,38 @@ class _$Authenticated implements Authenticated {
 }
 
 abstract class Authenticated implements AuthState {
-  factory Authenticated(String data) = _$Authenticated;
+  factory Authenticated(final String data) = _$Authenticated;
 
   @override
-  String get data;
+  String get data => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  $AuthenticatedCopyWith<Authenticated> get copyWith =>
+  _$$AuthenticatedCopyWith<_$Authenticated> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $LoadingCopyWith<$Res> implements $AuthStateCopyWith<$Res> {
-  factory $LoadingCopyWith(Loading value, $Res Function(Loading) then) =
-      _$LoadingCopyWithImpl<$Res>;
+abstract class _$$LoadingCopyWith<$Res> implements $AuthStateCopyWith<$Res> {
+  factory _$$LoadingCopyWith(_$Loading value, $Res Function(_$Loading) then) =
+      __$$LoadingCopyWithImpl<$Res>;
   @override
   $Res call({String data});
 }
 
 /// @nodoc
-class _$LoadingCopyWithImpl<$Res> extends _$AuthStateCopyWithImpl<$Res>
-    implements $LoadingCopyWith<$Res> {
-  _$LoadingCopyWithImpl(Loading _value, $Res Function(Loading) _then)
-      : super(_value, (v) => _then(v as Loading));
+class __$$LoadingCopyWithImpl<$Res> extends _$AuthStateCopyWithImpl<$Res>
+    implements _$$LoadingCopyWith<$Res> {
+  __$$LoadingCopyWithImpl(_$Loading _value, $Res Function(_$Loading) _then)
+      : super(_value, (v) => _then(v as _$Loading));
 
   @override
-  Loading get _value => super._value as Loading;
+  _$Loading get _value => super._value as _$Loading;
 
   @override
   $Res call({
     Object? data = freezed,
   }) {
-    return _then(Loading(
+    return _then(_$Loading(
       data == freezed
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
@@ -478,7 +447,7 @@ class _$Loading implements Loading {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is Loading &&
+            other is _$Loading &&
             const DeepCollectionEquality().equals(other.data, data));
   }
 
@@ -488,8 +457,8 @@ class _$Loading implements Loading {
 
   @JsonKey(ignore: true)
   @override
-  $LoadingCopyWith<Loading> get copyWith =>
-      _$LoadingCopyWithImpl<Loading>(this, _$identity);
+  _$$LoadingCopyWith<_$Loading> get copyWith =>
+      __$$LoadingCopyWithImpl<_$Loading>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -531,7 +500,7 @@ class _$Loading implements Loading {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(UnAuthenticated value) unauthenticated,
+    required TResult Function(Unauthenticated value) unauthenticated,
     required TResult Function(Authenticated value) authenticated,
     required TResult Function(Loading value) loading,
     required TResult Function(Error value) error,
@@ -542,7 +511,7 @@ class _$Loading implements Loading {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(UnAuthenticated value)? unauthenticated,
+    TResult Function(Unauthenticated value)? unauthenticated,
     TResult Function(Authenticated value)? authenticated,
     TResult Function(Loading value)? loading,
     TResult Function(Error value)? error,
@@ -553,7 +522,7 @@ class _$Loading implements Loading {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(UnAuthenticated value)? unauthenticated,
+    TResult Function(Unauthenticated value)? unauthenticated,
     TResult Function(Authenticated value)? authenticated,
     TResult Function(Loading value)? loading,
     TResult Function(Error value)? error,
@@ -567,37 +536,38 @@ class _$Loading implements Loading {
 }
 
 abstract class Loading implements AuthState {
-  factory Loading(String data) = _$Loading;
+  factory Loading(final String data) = _$Loading;
 
   @override
-  String get data;
+  String get data => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  $LoadingCopyWith<Loading> get copyWith => throw _privateConstructorUsedError;
+  _$$LoadingCopyWith<_$Loading> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $ErrorCopyWith<$Res> implements $AuthStateCopyWith<$Res> {
-  factory $ErrorCopyWith(Error value, $Res Function(Error) then) =
-      _$ErrorCopyWithImpl<$Res>;
+abstract class _$$ErrorCopyWith<$Res> implements $AuthStateCopyWith<$Res> {
+  factory _$$ErrorCopyWith(_$Error value, $Res Function(_$Error) then) =
+      __$$ErrorCopyWithImpl<$Res>;
   @override
   $Res call({String data});
 }
 
 /// @nodoc
-class _$ErrorCopyWithImpl<$Res> extends _$AuthStateCopyWithImpl<$Res>
-    implements $ErrorCopyWith<$Res> {
-  _$ErrorCopyWithImpl(Error _value, $Res Function(Error) _then)
-      : super(_value, (v) => _then(v as Error));
+class __$$ErrorCopyWithImpl<$Res> extends _$AuthStateCopyWithImpl<$Res>
+    implements _$$ErrorCopyWith<$Res> {
+  __$$ErrorCopyWithImpl(_$Error _value, $Res Function(_$Error) _then)
+      : super(_value, (v) => _then(v as _$Error));
 
   @override
-  Error get _value => super._value as Error;
+  _$Error get _value => super._value as _$Error;
 
   @override
   $Res call({
     Object? data = freezed,
   }) {
-    return _then(Error(
+    return _then(_$Error(
       data == freezed
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
@@ -623,7 +593,7 @@ class _$Error implements Error {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is Error &&
+            other is _$Error &&
             const DeepCollectionEquality().equals(other.data, data));
   }
 
@@ -633,8 +603,8 @@ class _$Error implements Error {
 
   @JsonKey(ignore: true)
   @override
-  $ErrorCopyWith<Error> get copyWith =>
-      _$ErrorCopyWithImpl<Error>(this, _$identity);
+  _$$ErrorCopyWith<_$Error> get copyWith =>
+      __$$ErrorCopyWithImpl<_$Error>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -676,7 +646,7 @@ class _$Error implements Error {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(UnAuthenticated value) unauthenticated,
+    required TResult Function(Unauthenticated value) unauthenticated,
     required TResult Function(Authenticated value) authenticated,
     required TResult Function(Loading value) loading,
     required TResult Function(Error value) error,
@@ -687,7 +657,7 @@ class _$Error implements Error {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(UnAuthenticated value)? unauthenticated,
+    TResult Function(Unauthenticated value)? unauthenticated,
     TResult Function(Authenticated value)? authenticated,
     TResult Function(Loading value)? loading,
     TResult Function(Error value)? error,
@@ -698,7 +668,7 @@ class _$Error implements Error {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(UnAuthenticated value)? unauthenticated,
+    TResult Function(Unauthenticated value)? unauthenticated,
     TResult Function(Authenticated value)? authenticated,
     TResult Function(Loading value)? loading,
     TResult Function(Error value)? error,
@@ -712,11 +682,11 @@ class _$Error implements Error {
 }
 
 abstract class Error implements AuthState {
-  factory Error(String data) = _$Error;
+  factory Error(final String data) = _$Error;
 
   @override
-  String get data;
+  String get data => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  $ErrorCopyWith<Error> get copyWith => throw _privateConstructorUsedError;
+  _$$ErrorCopyWith<_$Error> get copyWith => throw _privateConstructorUsedError;
 }

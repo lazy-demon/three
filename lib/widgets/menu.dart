@@ -1,3 +1,4 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -9,34 +10,18 @@ class Menu extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     var list = [
-      // DDOptions(
-      //   title: "Profile",
-      //   route: ('/profile'),
-      // ),
-      // DDOptions(
-      //   title: 'Settings',
-      //   route: ('/settings'),
-      // ),
-      // DDOptions(
-      //   title: 'Info',
-      //   route: ('/info'),
-      // ),
-      // DDOptions(
-      //   title: 'Rooms',
-      //   route: ('/rooms'),
-      // ),
       DDOptions(
         title: 'Users',
-        route: ('/users'),
+        route: ('/users-page'),
       ),
       DDOptions(
         title: 'Login',
-        route: ('/login'),
+        route: ('/login-page'),
       ),
     ];
 
     return PopupMenuButton(
-      onSelected: (route) => Navigator.pushNamed(context, route as String),
+      onSelected: (route) => context.router.navigateNamed(route as String),
       itemBuilder: (_) => <PopupMenuEntry>[
         for (var item in list)
           PopupMenuItem(
@@ -50,12 +35,3 @@ class Menu extends ConsumerWidget {
     );
   }
 }
-
-// onSelected: (route) => Navigator.push(
-//         context,
-//         PageRouteBuilder(
-//           pageBuilder: (c, a1, a2) => Scaffolding(body: UsersPage()),
-//           transitionsBuilder: (c, anim, a2, child) =>
-//               SizeTransition(sizeFactor: anim, child: child),
-//         ),
-//       ),

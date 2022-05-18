@@ -11,13 +11,9 @@ class FAB extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     var list = {
       "login": () async {
-        print("login");
-        print(ref.watch(authProvider));
         ref.read(authProvider.notifier).signInAnonymously();
-        print(ref.watch(authProvider));
       },
       "logout": () async {
-        // Navigator.popUntil(context, ModalRoute.withName('/'));
         ref.read(authProvider.notifier).signOut();
       },
     };
@@ -27,15 +23,10 @@ class FAB extends ConsumerWidget {
       children: <Widget>[
         for (var item in list.keys)
           FloatingActionButton(
-            child: Text(item),
             onPressed: list[item],
-            heroTag: null,
+            heroTag: item,
+            child: Text(item),
           ),
-        FloatingActionButton(
-          child: const Text("PUR"),
-          onPressed: () => context.router.navigateNamed("/test-page"),
-          heroTag: null,
-        ),
       ],
     );
   }

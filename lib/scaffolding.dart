@@ -15,7 +15,7 @@ class Scaffolding extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final authState = ref.watch(authProvider);
+    final AuthState authState = ref.watch(authProvider);
 
     return Scaffold(
       appBar: AppBar(

@@ -4,7 +4,7 @@ part 'auth.freezed.dart';
 
 @freezed
 class AuthState with _$AuthState {
-  factory AuthState.unauthenticated(String data) = UnAuthenticated;
+  factory AuthState.unauthenticated(String data) = Unauthenticated;
   factory AuthState.authenticated(String data) = Authenticated;
   factory AuthState.loading(String data) = Loading;
   factory AuthState.error(String data) = Error;

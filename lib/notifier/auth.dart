@@ -13,7 +13,7 @@ class AuthNotifier extends StateNotifier<AuthState> {
             : AuthState.authenticated(ref.read(userProvider).value.toString()));
 
   Future<void> signInAnonymously() async {
-    state = AuthState.loading("loading");
+    state = AuthState.loading("sign in");
     try {
       await FirebaseAuth.instance.signInAnonymously();
     } on FirebaseAuthException catch (e) {
@@ -25,7 +25,7 @@ class AuthNotifier extends StateNotifier<AuthState> {
   }
 
   Future<void> signOut() async {
-    state = AuthState.loading("loading");
+    state = AuthState.loading("sign out");
     try {
       await FirebaseAuth.instance.signOut();
     } on FirebaseAuthException catch (e) {
