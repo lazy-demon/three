@@ -11,7 +11,7 @@ class ChatPage extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    var iD = ref.watch(channelProvider);
+    var iD = ref.read(channelProvider);
     print("user: " + iD);
 
     return FirestoreBuilder<MessageQuerySnapshot>(

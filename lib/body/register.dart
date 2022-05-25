@@ -19,8 +19,8 @@ class RegisterPage extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final auth = ref.watch(authProvider.notifier);
-    final user = ref.watch(userProvider);
+    final auth = ref.read(authProvider.notifier);
+    final user = ref.read(userProvider);
 
     void _register() async {
       // FocusScope.of(context).unfocus();

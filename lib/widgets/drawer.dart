@@ -9,7 +9,7 @@ class NavigationDrawer extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    var name = ref.watch(userProvider).value!.displayName ?? "Welcome";
+    var name = ref.read(userProvider).value!.displayName ?? "Welcome";
 
     var list = [
       DDOptions(

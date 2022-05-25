@@ -22,7 +22,7 @@ class HomePage extends ConsumerWidget {
     return Scaffolding(
         body: FirestoreBuilder<ChannelQuerySnapshot>(
             ref: channelsRef.whereUsers(arrayContainsAny: [
-              (ref.watch(userProvider).value?.uid ?? 'not logged in')
+              (ref.read(userProvider).value?.uid ?? 'not logged in')
             ]),
             builder: (context, AsyncSnapshot<ChannelQuerySnapshot> snapshot,
                 Widget? child) {

@@ -23,8 +23,7 @@ class App extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    late final authService = ref.watch(authProvider.notifier);
-    late final appRouter = AppRouter(authGuard: AuthGuard(authService));
+    late final appRouter = AppRouter(authGuard: AuthGuard(ref));
 
     return MaterialApp.router(
       theme: ThemeData.dark(),
